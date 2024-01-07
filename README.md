@@ -8,3 +8,6 @@ Modified for Maya by Roland Vyens, changes down below:
 1. Modified working space to ACEScg that matches Maya default working space
 2. Changed the Non-color name to Raw for seamless experience with Maya default data name
 3. Added AgX Punchy in viewport color management
+
+Download method:
+Click "Code", and download zip
