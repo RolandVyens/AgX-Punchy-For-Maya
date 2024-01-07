@@ -10,4 +10,4 @@ Modified for Maya by Roland Vyens, changes down below:
 3. Added AgX Punchy in viewport color management
 
 Download method:
-Click "Code", and download zip
+Click "Code", then download zip
