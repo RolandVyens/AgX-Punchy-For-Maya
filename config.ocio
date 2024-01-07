@@ -406,6 +406,23 @@ colorspaces:
        - !<ColorSpaceTransform> {src: sRGB, dst: Rec.2020}
        - !<ColorSpaceTransform> {src: AgX Base Rec.2020, dst: Linear CIE-XYZ E}
 
+  - !<ColorSpace> #AgX Punchy sRGB
+    name: AgX Punchy sRGB
+    family: AgX
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      AgX Punchy Image Encoding for sRGB Display
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear FilmLight E-Gamut}
+        - !<LookTransform> {src: Linear FilmLight E-Gamut, dst: Linear FilmLight E-Gamut, looks: AgX - Punchy}
+        - !<AllocationTransform> {allocation: lg2, vars: [-12.47393, 12.5260688117]}
+        - !<FileTransform> {src: AgX_Base_sRGB.cube, interpolation: tetrahedral}
+        - !<ExponentTransform> {value: 2.4}
+        - !<ColorSpaceTransform> {src: Linear Rec.709, dst: sRGB}
+
   - !<ColorSpace>
     name: AgX Base Display P3
     family: AgX
@@ -426,6 +443,23 @@ colorspaces:
        - !<ColorSpaceTransform> {src: Display P3, dst: Rec.2020}
        - !<ColorSpaceTransform> {src: AgX Base Rec.2020, dst: Linear CIE-XYZ E}
 
+  - !<ColorSpace> #AgX Punchy Display P3
+    name: AgX Punchy Display P3
+    family: AgX
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      AgX Punchy Image Encoding for Display P3 Display
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear FilmLight E-Gamut}
+        - !<LookTransform> {src: Linear FilmLight E-Gamut, dst: Linear FilmLight E-Gamut, looks: AgX - Punchy}
+        - !<AllocationTransform> {allocation: lg2, vars: [-12.47393, 12.5260688117]}
+        - !<FileTransform> {src: AgX_Base_P3.cube, interpolation: tetrahedral}
+        - !<ExponentTransform> {value: 2.4}
+        - !<ColorSpaceTransform> {src: Linear DCI-P3 D65, dst: Display P3}
+
   - !<ColorSpace>
     name: AgX Base Rec.1886
     aliases: [AgX Base BT.1886]
@@ -444,6 +478,21 @@ colorspaces:
       children:
        - !<ColorSpaceTransform> {src: Rec.1886, dst: Rec.2020}
        - !<ColorSpaceTransform> {src: AgX Base Rec.2020, dst: Linear CIE-XYZ E}
+
+  - !<ColorSpace> #AgX Punchy Rec.1886
+    name: AgX Punchy Rec.1886
+    family: AgX
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      AgX Punchy Image Encoding for Rec.1886 Display
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear FilmLight E-Gamut}
+        - !<LookTransform> {src: Linear FilmLight E-Gamut, dst: Linear FilmLight E-Gamut, looks: AgX - Punchy}
+        - !<AllocationTransform> {allocation: lg2, vars: [-12.47393, 12.5260688117]}
+        - !<FileTransform> {src: AgX_Base_sRGB.cube, interpolation: tetrahedral}
 
   - !<ColorSpace>
     name: AgX False Color Rec.709
