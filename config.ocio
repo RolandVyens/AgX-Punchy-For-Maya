@@ -25,14 +25,14 @@ roles:
   reference: Linear CIE-XYZ E
 
   # Internal scene linear space
-  scene_linear: Linear Rec.709
-  rendering: Linear Rec.709
+  scene_linear: ACEScg #Linear Rec.709
+  rendering: ACEScg #Linear Rec.709
 
   # Default color space for byte image
   default_byte: sRGB
 
   # Default color space for float images
-  default_float: Linear Rec.709
+  default_float: ACEScg #Linear Rec.709
 
   # Default color space sequencer is working in
   default_sequencer: sRGB
@@ -41,7 +41,7 @@ roles:
   color_picking: sRGB
 
   # Non-color data
-  data: Non-Color
+  data: Raw
 
   # For interop between configs, and to determine XYZ for rendering
   aces_interchange: ACES2065-1
@@ -50,9 +50,9 @@ roles:
   # Specified by OCIO, not used in Blender
   color_timing: AgX Log
   compositing_log: AgX Log
-  default: Linear Rec.709
-  matte_paint: Linear Rec.709
-  texture_paint: Linear Rec.709
+  default: ACEScg #Linear Rec.709
+  matte_paint: ACEScg #Linear Rec.709
+  texture_paint: ACEScg #Linear Rec.709
 
 displays:
   sRGB:
@@ -66,19 +66,16 @@ displays:
   Display P3:
     - !<View> {name: Standard, colorspace: Display P3}
     - !<View> {name: AgX, colorspace: AgX Base Display P3}
-    - !<View> {name: AgX Punchy, colorspace: AgX Base Display P3, look: AgX - Punchy}
     - !<View> {name: False Color, colorspace: AgX False Color P3}
     - !<View> {name: Raw, colorspace: Non-Color}
   Rec.1886:
     - !<View> {name: Standard, colorspace: Rec.1886}
     - !<View> {name: AgX, colorspace: AgX Base Rec.1886}
-    - !<View> {name: AgX Punchy, colorspace: AgX Base Rec.1886, look: AgX - Punchy}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.709}
     - !<View> {name: Raw, colorspace: Non-Color}
   Rec.2020:
     - !<View> {name: Standard, colorspace: Rec.2020}
     - !<View> {name: AgX, colorspace: AgX Base Rec.2020}
-    - !<View> {name: AgX Punchy, colorspace: AgX Base Rec.2020, look: AgX - Punchy}
     - !<View> {name: False Color, colorspace: AgX False Color Rec.2020}
     - !<View> {name: Raw, colorspace: Non-Color}
 active_displays: [sRGB, Display P3, Rec.1886, Rec.2020]
@@ -248,8 +245,8 @@ colorspaces:
         - !<ExponentTransform> {value: 2.4, direction: inverse}
 
   - !<ColorSpace>
-    name: Non-Color
-    aliases: [Generic Data, Non-Colour Data, Raw, Utility - Raw]
+    name: Raw
+    aliases: [Generic Data, Non-Colour Data, Non-Color, Utility - Raw]
     family: Data
     description: |
         Generic data that is not color, will not apply any color transform (e.g. normal maps)
