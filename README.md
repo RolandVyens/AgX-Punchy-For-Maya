@@ -1,5 +1,7 @@
 ![agx vs aces](https://github.com/RolandVyens/AgX-Punchy-For-Maya/assets/30930721/eecd0b5e-3f27-42fd-bf19-e3c24775d351)
-left AgX Punchy, right ACES (both rendered in ACEScg colorspace)
+left AgX Punchy, right ACES (both rendered in ACEScg colorspace).
+
+Compared to ACES, AgX transform handles over saturation much better, you gets a smooth saturation fall off towards white.
 
 Based on AgX by Troy Sobotka. Further Developed by Zijun Eary Zhou法纤净, Mark Faderbauer, and Sakari Kapanen.
 
