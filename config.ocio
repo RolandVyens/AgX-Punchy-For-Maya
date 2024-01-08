@@ -11,6 +11,9 @@
 # Further Developed by Zijun Eary Zhou法纤净, Mark Faderbauer, and Sakari Kapanen
 # Repository for this version: https://github.com/EaryChow/AgX
 #
+# Modified for Maya by Roland Vyens
+# Github page to this OCIO: https://github.com/RolandVyens/AgX-Punchy-For-Maya
+#
 # See ocio-license.txt for details.
 
 ocio_profile_version: 2
